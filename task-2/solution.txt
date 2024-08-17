@@ -1,0 +1,20 @@
+git conflig --global user.name"maroyam42"
+git config --global user.email"mariamahmad422006@gmail.com"
+git clone https://github.com/maroyam42/OSC_Task
+cd OSC_Task
+mkdir task-2
+cd task-2
+touch greeting.txt
+nano greeting.txt
+git add greeting.txt
+git commit -m "Added greeting"
+git branch intro
+git checkout intro
+echo "I love git">>greeting.txt
+git add greeting.txt
+git commit -m "Added I love git"
+git checkout main
+git merge intro
+git tag v1
+git push origin main
+
