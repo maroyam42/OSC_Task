@@ -34,7 +34,7 @@ echo "summary start" > summary.txt
 date >> summary.txt
 wc -l summary.txt | tee -a summary.txt
 wc -w report1.md
-wc -m system.log | tee -a summary.txt
+wc -c system.log | tee -a summary.txt
 ls | wc -l | tee -a summary.txt
 cat summary.txt
   
