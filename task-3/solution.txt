@@ -1,41 +1,41 @@
-mkdir project_files 
+mkdir project_files
 cd project_files
 mkdir reports logs data
-cd reports 
+cd ~/project_files/reports
 touch report1.md report2.md
-cd -
-cd logs
-touch system.log error.log file1.pdf file2.pdf 
-cd -
-cd data
+cd ~/project_files/logs
+touch system.log error.log file1.pdf file2.pdf
+cd ~/project_files/data
 touch data.csv info.csv
-cd -
+cd ~/project_files/reports
 nano report1.md
+cd ~/project_files/logs
 nano system.log
+cd ~/project_files/data
 nano data.csv
-cd logs 
-tar -cvf logs_backup.tar system.log error.log file1.pdf file2.pdf
-mv logs_backup.tar /home/osc/peoject_files
-cd -
+cd ~/project_files/logs
+tar -cvf logs_backup.tar system.log error.log file1.log file2.log
+mv logs_backup.tar /home/osc/project_files
+cd ..
 tar -xvf logs_backup.tar -C logs
-find /home -name "*.md"
+find ~ -name "*.md"
 find -name "*.log"
-find -name "file1.pdf"
-find -name "*.pdf"
+find -name "file1.log"
+find -iname "*.pdf"
 cd logs
 find -type f
-cd -
-ln -s data.csv link_data.csv
-echo "mariam" > link_data.csv
+cd ..
+ln -s ~/project_files/data/data.csv ~/project_files/link_data.csv
+nano link_data.csv
+cd ~/project_files/data
 cat data.csv
+cd ..
 unlink link_data.csv
 touch summary.txt
-echo "summary start" > summary.txt
-date >> summary.txt
-wc -l summary.txt | tee -a summary.txt
-wc -w report1.md
-wc -c system.log | tee -a summary.txt
-ls | wc -l | tee -a summary.txt
+echo "summart start" > summary.txt
+wc -l ~/project_files/summary.txt | tee -a ~/project_files/summary.txt
+cd ~/project_files/logs
+wc -c system.log | tee -a summary.txt 
+cd ..
+ls | wc -l | tee -a summary.txt 
 cat summary.txt
-  
-
