@@ -1,9 +1,12 @@
 #!\bin\bash
-for file in *.txt;
+directory="$1"
+for file in "$directory"/*.txt;
 do
-        if [[ -e "$file" ]]
-                then
-                        mv "$file" "old_$file"
-        fi
+	if [[ -f "$file" ]]
+		then
+			base_file=$(basefile "$file")
+			mv "$file" "$dirctory/old_$base_file"
+	fi
 done
+echo "done"
 
