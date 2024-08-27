@@ -1,12 +1,14 @@
-#!\bin\bash
+#!/bin/bash
 directory="$1"
 for file in "$directory"/*.txt;
 do
-	if [[ -f "$file" ]]
-		then
-			base_file=$(basefile "$file")
-			mv "$file" "$dirctory/old_$base_file"
-	fi
+        if [ -f "$file" ];
+                then
+                        base_name=$(basename "$file")
+                        mv "$file" "$directory/old_$base_>
+        fi
 done
 echo "done"
+
+
 
