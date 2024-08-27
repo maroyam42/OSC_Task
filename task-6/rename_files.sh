@@ -1,5 +1,10 @@
 #!/bin/bash
 directory="$1"
+if [[ ! -d "$directory" ]]
+	then
+		echo "doesn't exist"
+	exit 1
+fi
 for file in "$directory"/*.txt;
 do
         if [ -f "$file" ];
